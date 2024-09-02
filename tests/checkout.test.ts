@@ -1,4 +1,4 @@
-import { checkout, total } from '../src/checkout';
+import { checkout } from '../src/checkout';
 
 describe('Empty Basket', () => {
   it('total should be 0', () => {
@@ -15,3 +15,13 @@ describe('Single item', () => {
     expect(total).toBe(50);
   })
 });
+
+describe('Two different items', () => {
+  it('items AB should total 80', () => {
+    var c = checkout();
+    c.scan('A');
+    c.scan('B');
+    const total = c.total();
+    expect(total).toBe(80);
+  })
+})

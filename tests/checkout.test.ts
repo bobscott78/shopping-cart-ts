@@ -63,3 +63,16 @@ describe('Apply discount for another item', () => {
     expect(total).toBe(45);
   })
 });
+
+describe('Apply discount twice', () => {
+  it('BBBB should total 90', () => {
+    var c = checkout(priceList);
+    c.scan('B');
+    c.scan('B');
+    c.scan('B');
+    c.scan('B');
+    const total = c.total();
+    expect(total).toBe(90);
+  })
+});
+

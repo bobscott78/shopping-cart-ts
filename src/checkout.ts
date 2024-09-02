@@ -20,6 +20,7 @@ export function checkout(priceList: { [key: string]: number }): Checkout {
     }
     if (discounts[item] && counts[item] == discounts[item].count) {
       discount += discounts[item].amount;
+      counts[item] = 0;
     }  
   }
 

@@ -41,4 +41,15 @@ describe('Two same item', () => {
     const total = c.total();
     expect(total).toBe(40);
   })
-})
+});
+
+describe('Apply simple discount', () => {
+  it('AAA should total 130', () => {
+    var c = checkout(priceList);
+    c.scan('A');
+    c.scan('A');
+    c.scan('A');
+    const total = c.total();
+    expect(total).toBe(130);
+  })
+});

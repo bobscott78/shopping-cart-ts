@@ -53,3 +53,13 @@ describe('Apply simple discount', () => {
     expect(total).toBe(130);
   })
 });
+
+describe('Apply discount for another item', () => {
+  it('BB should total 45', () => {
+    var c = checkout(priceList);
+    c.scan('B');
+    c.scan('B');
+    const total = c.total();
+    expect(total).toBe(45);
+  })
+});

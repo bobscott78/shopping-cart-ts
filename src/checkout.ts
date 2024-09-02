@@ -3,7 +3,8 @@ export function checkout(): any {
   
   return {
     scan: (item: string) => {
-      item === 'B' ? total += 30 : total += 50;
+      const price =  item === 'B' ? 30 : 50;
+      total += price;
     },
     total: () => {
       return total;

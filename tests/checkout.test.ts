@@ -1,8 +1,9 @@
 import { checkout } from '../src/checkout';
 
 const priceList: { [key: string]: number } = {
-  "A": 50,
-  "B": 30,
+  'A': 50,
+  'B': 30,
+  'C': 20,
 };
 
 describe('Empty Basket', () => {
@@ -28,5 +29,15 @@ describe('Two different items', () => {
     c.scan('B');
     const total = c.total();
     expect(total).toBe(80);
+  })
+});
+
+describe('Two same item', () => {
+  it('items CC should total 40', () => {
+    var c = checkout(priceList);
+    c.scan('C');
+    c.scan('C');
+    const total = c.total();
+    expect(total).toBe(40);
   })
 })

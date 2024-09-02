@@ -4,6 +4,7 @@ const priceList: { [key: string]: number } = {
   'A': 50,
   'B': 30,
   'C': 20,
+  'D': 15,
 };
 
 describe('Empty Basket', () => {
